@@ -13,6 +13,7 @@ export function ResultScreen() {
   const imgRef = useRef<HTMLImageElement>(null);
   const [isSaved, setIsSaved] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [showInsights, setShowInsights] = useState(false);
 
   if (!generatedImage) {
     return (
@@ -109,23 +110,37 @@ export function ResultScreen() {
           drag={scale > 1}
           dragConstraints={{ left: -100, right: 100, top: -100, bottom: 100 }}
         />
-        
-        {/* Style Intelligence Overlay */}
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/90 to-transparent pt-40 pb-8 px-8">
-          <div className="flex items-center space-x-2 mb-3">
-            <Sparkles size={14} className="text-purple-400" />
-            <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-purple-400">
-              Style Intelligence
-            </span>
-          </div>
-          <p className="text-white text-xl font-light leading-relaxed italic pr-4">
-            "{caption || "Precision fit achieved. Your silhouette has been optimized for this aesthetic."}"
-          </p>
-        </div>
       </div>
 
       {/* Details & Actions */}
       <div className="p-8 pb-16 space-y-8 bg-[#050505]">
+        
+        {/* AI Insights Button & Expandable Section */}
+        <div className="space-y-4">
+          <button 
+            onClick={() => setShowInsights(!showInsights)}
+            className="w-full py-4 rounded-3xl bg-purple-600/10 border border-purple-500/20 flex items-center justify-center space-x-3 text-purple-400 hover:bg-purple-600/20 transition-all group"
+          >
+            <Sparkles size={18} className={showInsights ? "fill-purple-400" : ""} />
+            <span className="text-xs font-bold uppercase tracking-[0.2em]">{showInsights ? "Hide Insights" : "View AI Insights"}</span>
+          </button>
+
+          <motion.div 
+            initial={false}
+            animate={{ height: showInsights ? "auto" : 0, opacity: showInsights ? 1 : 0 }}
+            className="overflow-hidden"
+          >
+            <div className="p-6 bg-white/5 border border-white/10 rounded-[32px] backdrop-blur-md">
+              <div className="flex items-center space-x-2 mb-4">
+                <div className="w-1 h-4 bg-purple-500 rounded-full" />
+                <h4 className="text-[10px] font-bold tracking-[0.3em] uppercase text-white/50">Neural Styling Report</h4>
+              </div>
+              <p className="text-white text-lg font-light leading-relaxed italic">
+                "{caption || "Precision fit achieved. Your silhouette has been optimized for this aesthetic. Consider pairing with minimalist accessories to maintain the clean lines."}"
+              </p>
+            </div>
+          </motion.div>
+        </div>
         
         {garments.length > 0 && (
           <div className="space-y-4">

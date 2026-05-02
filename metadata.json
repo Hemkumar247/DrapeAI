@@ -1,0 +1,8 @@
+{
+  "name": "DRAPE Virtual Try-On",
+  "description": "A Virtual Try-On web-app that analyzes garments, validates user photos, and generates photorealistic try-on results using Gemini and Imagen logic.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}

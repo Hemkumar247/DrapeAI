@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+  background-color: #050505; /* Black background for the body which acts as the 'bezels' of the phone frame */
+  color: #fff;
+  font-family: var(--font-sans);
+}

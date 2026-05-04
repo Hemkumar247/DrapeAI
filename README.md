@@ -1,3 +1,6 @@
+
+
+
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=17,20,24&height=200&section=header&text=DrapeAI&fontSize=70&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI%20Virtual%20Try-On%20%7C%20Gemini%202.0%20Flash%20%2B%20Imagen%203%20%2B%20Vertex%20AI&descAlignY=58&descSize=15"/>
@@ -93,6 +96,7 @@ Return rates in fashion e-commerce exceed 30%, largely because clothing looks di
 💬 Personal Style Caption       →  Gemini writes a style note specific to your result
 💾 Save & Share Looks           →  Save to wardrobe, share results, revisit anytime
 ```
+https://github.com/user-attachments/assets/3be1c903-e87b-433b-8eb9-ff436ecd177d
 
 ---
 
